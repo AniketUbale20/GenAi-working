@@ -1,0 +1,57 @@
+{
+  "name": "genai-dev-platform",
+  "version": "1.0.0",
+  "description": "GenAI-Powered Development Platform - Revolutionizing SDLC with AI",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:frontend": "cd frontend && npm run dev",
+    "dev:backend": "cd backend && npm run dev",
+    "build": "npm run build:frontend && npm run build:backend",
+    "build:frontend": "cd frontend && npm run build",
+    "build:backend": "cd backend && npm run build",
+    "test": "npm run test:frontend && npm run test:backend",
+    "test:frontend": "cd frontend && npm test",
+    "test:backend": "cd backend && npm test",
+    "install:all": "npm install && cd frontend && npm install && cd ../backend && npm install && cd ../ai-engine && npm install",
+    "start": "cd backend && npm start",
+    "deploy": "docker-compose up --build",
+    "security:scan": "npm audit && cd frontend && npm audit && cd ../backend && npm audit",
+    "lint": "npm run lint:frontend && npm run lint:backend",
+    "lint:frontend": "cd frontend && npm run lint",
+    "lint:backend": "cd backend && npm run lint"
+  },
+  "keywords": [
+    "GenAI",
+    "LCNC",
+    "SDLC",
+    "code-generation",
+    "AI",
+    "development-platform"
+  ],
+  "author": "GenAI Dev Platform Team",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "husky": "^8.0.3",
+    "lint-staged": "^15.2.0"
+  },
+  "workspaces": [
+    "frontend",
+    "backend",
+    "ai-engine",
+    "component-library"
+  ],
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-org/genai-dev-platform.git"
+  },
+  "bugs": {
+    "url": "https://github.com/your-org/genai-dev-platform/issues"
+  },
+  "homepage": "https://github.com/your-org/genai-dev-platform#readme"
+}
